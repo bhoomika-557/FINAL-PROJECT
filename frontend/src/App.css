@@ -1,0 +1,51 @@
+.MuiDataGrid-main {
+  width: 90vw;
+  overflow: auto;
+}
+.hello {
+  background-color: blue;
+}
+/* sidenav color */
+.css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper {
+  background-color: rgb(13, 21, 104);
+}
+
+.topnav {
+  background-color: rgb(13, 21, 104);
+}
+
+.css-2dum1v-MuiDrawer-docked .MuiDrawer-paper {
+  background-color: rgb(8, 14, 87);
+}
+/* sidenav borders for each */
+
+.css-uxa1ks-MuiListItem-root {
+  /* border-top: 1px solid rgb(75, 73, 73); */
+  border-bottom: 1px solid rgb(75, 73, 73);
+  color: aliceblue;
+}
+/* icons color */
+.MuiSvgIcon-fontSizeMedium {
+  color: aliceblue;
+}
+.css-uxa1ks-MuiListItem-root:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+.css-uxa1ks-MuiListItem-root:hover .MuiSvgIcon-fontSizeMedium {
+  background-color: aliceblue;
+  color: black;
+}
+
+/* ACADEMIC YEARS */
+
+.css-6ffsbr-MuiAutocomplete-root {
+  background-color: aliceblue;
+  color: black;
+}
+
+/* DOWNLOAD BUTTON */
+.css-10p1sq7-MuiButtonBase-root-MuiButton-root {
+  background-color: indigo;
+}
