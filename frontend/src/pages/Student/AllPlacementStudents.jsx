@@ -11,22 +11,23 @@ const columns = [
   { field: "NAME_OF_THE_STUDENT", headerName: "STUDENT NAME", width: 250 },
   { field: "GENDER", headerName: "GENDER", width: 150 },
   { field: "BRANCH", headerName: "BRANCH", width: 150 },
+  { field: "NO_OF_OFFERS", headerName: "NO OF OFFERS", width: 150 },
   { field: "EMAIL", headerName: "EMAIL ID", width: 200 },
   { field: "MOBILE", headerName: "MOBILE No", width: 200 },
   { field: "ADDRESS", headerName: "ADDRESS", width: 200 },
-  { field: "NO_OF_OFFERS", headerName: "NO OF OFFERS", width: 150 },
-  { field: "HIGHEST_PACKAGE", headerName: "HIGHEST PACKAGE", width: 200 },
-  {
-    field: "HIGHEST_PACKAGE_COMPANY",
-    headerName: "HIGHEST_PACKAGE_COMPANY",
-    width: 200,
-  },
-  { field: "LOWEST_PACKAGE", headerName: "LOWEST PACKAGE", width: 200 },
-  {
-    field: "LOWEST_PACKAGE_COMPANY",
-    headerName: "LOWEST PACKAGE COMPANY",
-    width: 200,
-  },
+
+  // { field: "HIGHEST_PACKAGE", headerName: "HIGHEST PACKAGE", width: 200 },
+  // {
+  //   field: "HIGHEST_PACKAGE_COMPANY",
+  //   headerName: "HIGHEST_PACKAGE_COMPANY",
+  //   width: 200,
+  // },
+  // { field: "LOWEST_PACKAGE", headerName: "LOWEST PACKAGE", width: 200 },
+  // {
+  //   field: "LOWEST_PACKAGE_COMPANY",
+  //   headerName: "LOWEST PACKAGE COMPANY",
+  //   width: 200,
+  // },
 ];
 
 export default function AllPlacementStudents() {

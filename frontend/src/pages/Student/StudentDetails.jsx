@@ -84,6 +84,13 @@ const StudentDetails = () => {
         </li>
         <li className="p-1">
           <div className="flex flex-row max-w-full">
+            <strong className="w-44">No.of Offers</strong>
+            <div className="w-7">:</div>
+            {student?.NO_OF_OFFERS}
+          </div>
+        </li>
+        {/* <li className="p-1">
+          <div className="flex flex-row max-w-full">
             <strong className="w-44">Highest Package</strong>
             <div className="w-7">:</div>
             {student?.HIGHEST_PACKAGE}
@@ -109,7 +116,7 @@ const StudentDetails = () => {
             <div className="w-7">:</div>
             {student?.LOWEST_PACKAGE_COMPANY}
           </div>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

@@ -53,6 +53,7 @@ const getDepartmentById = async (req, res) => {
           "PERSONAL_DETAILS.EMAIL": 1,
           "PERSONAL_DETAILS.MOBILE": 1,
           "PERSONAL_DETAILS.ADDRESS": 1,
+          NO_OF_OFFERS: { $size: "$SELECTED_COMPANY_DETAILS" },
           ACADEMIC_YEAR: 1,
           "SELECTED_COMPANY_DETAILS.COMPANY_NAME": 1,
           "SELECTED_COMPANY_DETAILS.CTC": 1,
@@ -74,6 +75,7 @@ const getDepartmentById = async (req, res) => {
           MOBILE: { $first: "$PERSONAL_DETAILS.MOBILE" },
           ADDRESS: { $first: "$PERSONAL_DETAILS.ADDRESS" },
           ACADEMIC_YEAR: { $first: "$ACADEMIC_YEAR" },
+          NO_OF_OFFERS: { $first: "$NO_OF_OFFERS" },
           HIGHEST_PACKAGE: { $max: "$SELECTED_COMPANY_DETAILS.CTC" },
           LOWEST_PACKAGE: { $min: "$SELECTED_COMPANY_DETAILS.CTC" },
           HIGHEST_PACKAGE_COMPANY: {

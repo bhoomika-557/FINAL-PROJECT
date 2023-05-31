@@ -161,7 +161,7 @@ const studentSpecificCompanies = async (req, res) => {
 
 const studentDetails = async (req, res, next) => {
   try {
-    console.log(req.params.REG_NO);
+    console.log('params',req.params.REG_NO);
     const result = await Student.aggregate([
       {
         $match: { REG_NO: req.params.REG_NO },
@@ -177,9 +177,7 @@ const studentDetails = async (req, res, next) => {
           "PERSONAL_DETAILS.MOBILE": 1,
           "PERSONAL_DETAILS.ADDRESS": 1,
           ACADEMIC_YEAR: 1,
-          //
-          NO_OF_OFFERS:{$sum:1 },
-         // "PERSONAL_DETAILS.NAME_OF_THE_STUDENT":1,
+          NO_OF_OFFERS: { $size: "$SELECTED_COMPANY_DETAILS" },
           "SELECTED_COMPANY_DETAILS.COMPANY_NAME": 1,
           "SELECTED_COMPANY_DETAILS.CTC": 1,
         },
@@ -203,8 +201,7 @@ const studentDetails = async (req, res, next) => {
           MOBILE: { $first: "$PERSONAL_DETAILS.MOBILE" },
           ADDRESS: { $first: "$PERSONAL_DETAILS.ADDRESS" },
           ACADEMIC_YEAR: { $first: "$ACADEMIC_YEAR" },
-         NO_OF_OFFERS:{count: {$sum:1 }},
-         // NO_OF_OFFERS:{ $first: "$PERSONAL_DETAILS.NAME_OF_THE_STUDENT"},
+          NO_OF_OFFERS: { $first: "$NO_OF_OFFERS" },
           HIGHEST_PACKAGE: { $max: "$SELECTED_COMPANY_DETAILS.CTC" },
           LOWEST_PACKAGE: { $min: "$SELECTED_COMPANY_DETAILS.CTC" },
           HIGHEST_PACKAGE_COMPANY: {
@@ -257,12 +254,11 @@ const studentDetails = async (req, res, next) => {
               ],
             },
           },
-         
         },
       },
     ]);
 
-    console.log(result);
+    console.log('xxxxxx',result);
     if (result.length) {
       res.status(200).json({
         student_details: result[0],
@@ -275,6 +271,7 @@ const studentDetails = async (req, res, next) => {
       });
     }
   } catch (e) {
+    console.llz
     res.status(400).json({
       message: `Error while fetching the student data.`,
     });
